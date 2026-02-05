@@ -4,144 +4,686 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memoria Multimedia - Héctor Jarque</title>
+    <title>Memoria JavaScript - Héctor Jarque</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .codigo-ejemplo {
+            background-color: #f4f4f4;
+            border-left: 4px solid #4facfe;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border-radius: 0.3rem;
+        }
+
+        .codigo-ejemplo code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .lista-eventos {
+            background-color: #e8f4fd;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tabla-funcionalidades {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .tabla-funcionalidades th,
+        .tabla-funcionalidades td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .tabla-funcionalidades th {
+            background-color: #4facfe;
+            color: white;
+        }
+
+        .tabla-funcionalidades tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <main>
-            <h1>Memoria Práctica TEMA 3 - Elementos Multimedia</h1>
-            <p>Documentación de la práctica.</p>
+            <h1>Memoria Práctica TEMA 4 - JavaScript y jQuery</h1>
+            <p><strong>Alumno:</strong> Héctor Jarque García</p>
+            <p><strong>Fecha:</strong> Febrero 2026</p>
+            <p>Documentación completa de la implementación de interactividad en el CV personal.</p>
 
             <hr>
 
-            <section id="listado-media">
-                <h2>1. Listado de Elementos Multimedia</h2>
+            <section id="resumen">
+                <h2>1. Resumen Ejecutivo</h2>
+                <p>Esta práctica añade <strong>interactividad completa</strong> al CV web existente mediante JavaScript
+                    y jQuery. Se han implementado <strong>18 eventos distintos</strong>, múltiples manipulaciones del
+                    DOM, animaciones fluidas y un componente principal de galería modal interactiva.</p>
 
-                <h3>Imágenes usadas</h3>
+                <h3>Tecnologías utilizadas:</h3>
                 <ul>
-                    <li><strong>Yo.jpg:</strong>
-                        <ul>
-                            <li>Formato: JPEG.</li>
-                            <li>Peso: 30,5 KB.</li>
-                            <li>Justificación: Es una fotografía de contenido. JPEG es ideal para imágenes
-                                fotográficas con degradados complejos, ofreciendo buena compresión.</li>
-                            <li>Tipo: Contenido (etiqueta <code>&lt;img&gt;</code>).</li>
-                        </ul>
-                    </li>
-                    <li><strong>uwutrack-preview.jpg, proxmox-vm.jpg, angular-app.jpg, nestjs-api.jpg:</strong>
-                        <ul>
-                            <li>Formato: JPEG o.</li>
-                            <li>Peso: 185,9 KB en total.</li>
-                            <li>Justificación: JPEG/WebP son
-                                adecuados para imágenes con muchos detalles. Idealmente, se usaría WebP para mejor
-                                compresión con calidad.</li>
-                            <li>Tipo: Contenido (etiqueta <code>&lt;figure&gt;</code>/<code>&lt;img&gt;</code> en
-                                galería).</li>
-                        </ul>
-                    </li>
-                    <li><strong>Linkedin.png, Github.png:</strong>
-                        <ul>
-                            <li>Formato: PNG.</li>
-                            <li>Peso: 194 KB.</li>
-                            <li>Justificación: Logotipos o iconos con áreas de color plano y transparencias. PNG (o
-                                mejor SVG) es la opción correcta para preservar la nitidez.</li>
-                            <li>Tipo: Contenido (etiqueta <code>&lt;img&gt;</code>).</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Audios usados</h3>
-                <ul>
-                    <li><strong>podcast-extracto.mp3</strong>:
-                        <ul>
-                            <li>Origen: pixabay.com.</li>
-                            <li>Licencia: Free Use.</li>
-                            <li>Formatos usados: MP3 (amplia compatibilidad, buen estándar) y OGG sería para cobertura
-                                total en navegadores no compatibles con MP3.</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Vídeos usados</h3>
-                <ul>
-                    <li><strong>demo-proyecto.mp4</strong>:
-                        <ul>
-                            <li>Origen: pixabay.com</li>
-                            <li>Licencia: Free Use.</li>
-                            <li>Formatos usados: MP4 (cubre la mayoría de navegadores) y WebM ( sería la alternativa
-                                libre y
-                                eficiente para máxima compatibilidad).</li>
-                        </ul>
-                    </li>
+                    <li><strong>jQuery 3.7.1</strong> - Biblioteca JavaScript</li>
+                    <li><strong>JavaScript ES6</strong> - Funciones nativas modernas</li>
+                    <li><strong>CSS3</strong> - Animaciones y transiciones</li>
+                    <li><strong>HTML5</strong> - Estructura semántica</li>
                 </ul>
             </section>
 
             <hr>
 
-            <section id="explicacion-efectos">
-                <h2>2. Explicación de Transiciones y Animaciones CSS</h2>
+            <section id="componente-principal">
+                <h2>2. Componente Interactivo Principal: Galería Modal</h2>
 
-                <h3>Transiciones y Animaciones Aplicadas</h3>
+                <h3>Descripción</h3>
+                <p>Sistema completo de visualización de imágenes con modal fullscreen que incluye:</p>
+                <ul>
+                    <li>Apertura de modal al hacer clic en cualquier imagen de la galería</li>
+                    <li>Navegación entre imágenes (anterior/siguiente)</li>
+                    <li>Visualización de captions descriptivos</li>
+                    <li>Cierre con botón X, click fuera del contenido o tecla ESC</li>
+                    <li>Animaciones suaves de entrada/salida (fadeIn/fadeOut)</li>
+                    <li>Diseño responsive adaptado a móviles</li>
+                </ul>
+
+                <h3>Implementación técnica</h3>
+                <div class="codigo-ejemplo">
+                    <code>
+// Creación dinámica del modal<br>
+const modalHTML = `<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="gallery-modal" class="modal-overlay"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="modal-content"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="modal-close"&gt;&times;&lt;/span&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img id="modal-image" src="" alt=""&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="modal-navigation"&gt;...&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+`;<br>
+$('body').append(modalHTML);
+                    </code>
+                </div>
+
+                <h3>Eventos asociados</h3>
+                <div class="lista-eventos">
+                    <ul>
+                        <li><strong>Click en imagen</strong> → Abre modal con imagen seleccionada</li>
+                        <li><strong>Click en cerrar (X)</strong> → Cierra modal</li>
+                        <li><strong>Click fuera del contenido</strong> → Cierra modal</li>
+                        <li><strong>Click en "Anterior"</strong> → Navega a imagen previa</li>
+                        <li><strong>Click en "Siguiente"</strong> → Navega a siguiente imagen</li>
+                        <li><strong>Presionar ESC</strong> → Cierra modal</li>
+                    </ul>
+                </div>
+
+                <h3>Mejoras de usabilidad</h3>
+                <ul>
+                    <li>Icono de lupa (🔍) aparece al hacer hover sobre imágenes</li>
+                    <li>Previene scroll de la página cuando el modal está abierto</li>
+                    <li>Navegación circular: tras la última imagen vuelve a la primera</li>
+                    <li>Animaciones suaves para mejor experiencia de usuario</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="eventos">
+                <h2>3. Gestión de Eventos (18 implementados)</h2>
+
+                <table class="tabla-funcionalidades">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Evento</th>
+                            <th>Elemento</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>click</td>
+                            <td>Imágenes galería</td>
+                            <td>Abre modal con imagen ampliada</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>click</td>
+                            <td>Botón cerrar modal</td>
+                            <td>Cierra modal de galería</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>click</td>
+                            <td>Botón anterior</td>
+                            <td>Navega a imagen anterior</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>click</td>
+                            <td>Botón siguiente</td>
+                            <td>Navega a imagen siguiente</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>keydown</td>
+                            <td>Documento (ESC)</td>
+                            <td>Cierra modal si está visible</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>click</td>
+                            <td>Título Experiencia</td>
+                            <td>Expande/colapsa sección (acordeón)</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>scroll</td>
+                            <td>Window</td>
+                            <td>Anima barras de progreso al entrar en viewport</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>focus</td>
+                            <td>Campos formulario</td>
+                            <td>Aplica estilo de foco (borde azul)</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>blur</td>
+                            <td>Campos formulario</td>
+                            <td>Valida campo individual</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>submit</td>
+                            <td>Formulario contacto</td>
+                            <td>Valida y muestra mensaje de éxito/error</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>click</td>
+                            <td>Enlaces navegación</td>
+                            <td>Scroll suave a sección</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>mouseenter</td>
+                            <td>Artículos experiencia</td>
+                            <td>Aplica efecto hover (fondo gris)</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>mouseenter</td>
+                            <td>Iconos sociales</td>
+                            <td>Escala y rota icono</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>scroll</td>
+                            <td>Window</td>
+                            <td>Muestra/oculta botón "volver arriba"</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>click</td>
+                            <td>Botón volver arriba</td>
+                            <td>Scroll suave al inicio</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>input</td>
+                            <td>Textarea mensaje</td>
+                            <td>Actualiza contador de caracteres</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>mouseenter</td>
+                            <td>Barras progreso</td>
+                            <td>Muestra tooltip con porcentaje</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>scroll</td>
+                            <td>Window</td>
+                            <td>Anima entrada de secciones (fade in)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Total: 18 eventos únicos</strong> → Cumple ampliamente el requisito de 4 eventos mínimos</p>
+            </section>
+
+            <hr>
+
+            <section id="manipulacion-dom">
+                <h2>4. Manipulación del DOM</h2>
+
+                <h3>Acciones implementadas (más de 3):</h3>
+
                 <ol>
-                    <li>Efecto Hover de Galería:
+                    <li>
+                        <strong>Creación dinámica de elementos</strong>
                         <ul>
-                            <li>Dónde: Elemento <code>.galeria-item:hover</code>.</li>
-                            <li>Objetivo: Mostrar al usuario que la imagen es interactiva o un elemento de
-                                portafolio al que se le puede prestar atención.</li>
-                            <li>Implementación: Se usa
-                                <code>transition: transform 0.4s, filter 0.4s, box-shadow 0.4s</code> para una animación
-                                suave. Al hacer hover, se aplica <code>transform: scale(1.03)</code> (un zoom sutil) y
-                                <code>filter: grayscale(80%)</code> (el efecto visual solicitado).
-                            </li>
+                            <li>Modal de galería completo insertado en el DOM</li>
+                            <li>Botón "volver arriba" añadido dinámicamente</li>
+                            <li>Contenedor de mensajes del formulario</li>
+                            <li>Contador de caracteres para textarea</li>
+                            <li>Tooltips de habilidades</li>
                         </ul>
+                        <div class="codigo-ejemplo">
+                            <code>$('body').append(modalHTML);<br>
+$('&lt;div id="form-messages"&gt;').insertBefore('#contacto form');</code>
+                        </div>
                     </li>
-                    <li>"Call to Action" del Botón de Contacto:
+
+                    <li>
+                        <strong>Mostrar/ocultar elementos</strong>
                         <ul>
-                            <li>Dónde: Elemento <code>.contact-page-container button:hover</code>.</li>
-                            <li>Objetivo: Llamar la atención sobre la acción principal de la página (enviar el
-                                formulario) y dar una respuesta visual clara a la interacción del usuario.</li>
-                            <li>Implementación: Se usa
-                                <code>transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s</code>. Al
-                                hacer hover, se aplica <code>transform: translateY(-3px) scale(1.01)</code> (un ligero
-                                movimiento hacia arriba) y una sombra más profunda.
-                            </li>
+                            <li>Modal con fadeIn() / fadeOut()</li>
+                            <li>Secciones con slideToggle() (acordeón)</li>
+                            <li>Botón "volver arriba" según scroll</li>
+                            <li>Mensajes de validación</li>
                         </ul>
+                        <div class="codigo-ejemplo">
+                            <code>$('#gallery-modal').fadeIn(300);<br>
+content.slideToggle(400);</code>
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Modificación de contenido</strong>
+                        <ul>
+                            <li>Actualización de imagen y caption del modal</li>
+                            <li>Cambio de iconos de acordeón (▼ ↔ ▶)</li>
+                            <li>Contador de caracteres en tiempo real</li>
+                            <li>Mensajes de error/éxito del formulario</li>
+                        </ul>
+                        <div class="codigo-ejemplo">
+                            <code>$('#modal-image').attr('src', imgSrc);<br>
+$('#char-counter').text(currentLength + ' / 500');</code>
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Cambio de estilos CSS</strong>
+                        <ul>
+                            <li>Border-color de campos según validación</li>
+                            <li>Background en hover de artículos</li>
+                            <li>Transform en iconos sociales</li>
+                            <li>Prevención de scroll (overflow hidden)</li>
+                        </ul>
+                        <div class="codigo-ejemplo">
+                            <code>$(this).css('border-color', '#27ae60');<br>
+$('body').css('overflow', 'hidden');</code>
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Añadir/eliminar clases</strong>
+                        <ul>
+                            <li>Clase "section-visible" para animaciones</li>
+                            <li>Clases de mensaje (success/error)</li>
+                        </ul>
+                        <div class="codigo-ejemplo">
+                            <code>$(this).addClass('section-visible');<br>
+$('#form-messages').removeClass('message-error').addClass('message-success');</code>
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Inserción y eliminación de elementos</strong>
+                        <ul>
+                            <li>Mensajes de error junto a campos</li>
+                            <li>Tooltips temporales</li>
+                            <li>Iconos de toggle en títulos</li>
+                        </ul>
+                        <div class="codigo-ejemplo">
+                            <code>$('&lt;span class="field-error"&gt;' + errorMsg + '&lt;/span&gt;').insertAfter($field);<br>
+$field.next('.field-error').remove();</code>
+                        </div>
                     </li>
                 </ol>
 
-                <h3>Problemas Encontrados y Soluciones</h3>
+                <p><strong>Total: 6 tipos de manipulación del DOM</strong> → Duplica el requisito de 3 acciones mínimas
+                </p>
+            </section>
+
+            <hr>
+
+            <section id="animaciones">
+                <h2>5. Animaciones y Efectos</h2>
+
+                <h3>Animaciones implementadas (más de 2):</h3>
+
+                <table class="tabla-funcionalidades">
+                    <thead>
+                        <tr>
+                            <th>Animación</th>
+                            <th>Elemento</th>
+                            <th>Propósito</th>
+                            <th>Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>fadeIn / fadeOut</td>
+                            <td>Modal galería</td>
+                            <td>Transición suave de aparición/desaparición</td>
+                            <td>300ms</td>
+                        </tr>
+                        <tr>
+                            <td>slideToggle</td>
+                            <td>Secciones (acordeón)</td>
+                            <td>Expandir/colapsar contenido</td>
+                            <td>400ms</td>
+                        </tr>
+                        <tr>
+                            <td>animate (value)</td>
+                            <td>Barras de progreso</td>
+                            <td>Relleno progresivo de 0 a valor final</td>
+                            <td>1500ms</td>
+                        </tr>
+                        <tr>
+                            <td>animate (scrollTop)</td>
+                            <td>Window/HTML</td>
+                            <td>Scroll suave a secciones y al inicio</td>
+                            <td>600ms</td>
+                        </tr>
+                        <tr>
+                            <td>fadeIn / fadeOut</td>
+                            <td>Botón volver arriba</td>
+                            <td>Aparición/desaparición según scroll</td>
+                            <td>300ms</td>
+                        </tr>
+                        <tr>
+                            <td>fadeIn / fadeOut</td>
+                            <td>Tooltips habilidades</td>
+                            <td>Mostrar porcentaje al hover</td>
+                            <td>200ms</td>
+                        </tr>
+                        <tr>
+                            <td>CSS transform</td>
+                            <td>Imágenes galería</td>
+                            <td>Scale y grayscale en hover</td>
+                            <td>400ms</td>
+                        </tr>
+                        <tr>
+                            <td>CSS opacity + translateY</td>
+                            <td>Secciones</td>
+                            <td>Fade in desde abajo al hacer scroll</td>
+                            <td>600ms</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Total: 8 animaciones distintas</strong> → Cuadruplica el requisito de 2 animaciones mínimas
+                </p>
+
+                <h3>Justificación de animaciones:</h3>
                 <ul>
-                    <li>Problema: Asegurar que los efectos de transición no fueran demasiado bruscos.
-                        <ul>
-                            <li>Solución: Se limita el valor del <code>transform: scale()</code> a 1.03 y el
-                                <code>filter: grayscale()</code> al 80%, y se usan valores de tiempo de transición de
-                                <code>0.2s</code> a <code>0.4s</code> con la función <code>ease-out</code> para que los
-                                efectos se sintieran suaves y sutiles.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>Problema: Lograr la máxima compatibilidad de audio y video.
-                        <ul>
-                            <li>Solución: Uso de la etiqueta <code>&lt;source&gt;</code> múltiple dentro de
-                                <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> con los formatos MP3+OGG y
-                                MP4+WebM, respectivamente, lo que es la práctica recomendada para la cobertura de
-                                navegadores.
-                            </li>
-                        </ul>
-                    </li>
+                    <li><strong>Todas mejoran la UX:</strong> No son puramente decorativas</li>
+                    <li><strong>Feedback visual:</strong> El usuario entiende qué está ocurriendo</li>
+                    <li><strong>Tiempos adecuados:</strong> Entre 200-1500ms, nunca molestas</li>
+                    <li><strong>Funcionalidad clara:</strong> Cada animación tiene un propósito</li>
                 </ul>
             </section>
 
             <hr>
 
-            <section id="derechos-autor">
-                <h2>3. Confirmación de Derechos de Autor</h2>
-                <p>Confirmo que todos los elementos multimedia (imágenes, audios y videos) utilizados son de creación
-                    propia o están bajo licencias que permiten su uso en un proyecto educativo/personal, sin vulnerar
-                    derechos de autor.</p>
+            <section id="validacion-formulario">
+                <h2>6. Sistema de Validación del Formulario</h2>
+
+                <h3>Características implementadas:</h3>
+                <ul>
+                    <li><strong>Validación en tiempo real</strong> al perder foco (blur)</li>
+                    <li><strong>Validación completa</strong> al enviar (submit)</li>
+                    <li><strong>Feedback visual inmediato</strong>
+                        <ul>
+                            <li>Borde verde → campo válido</li>
+                            <li>Borde rojo → campo con error</li>
+                            <li>Mensaje de error específico bajo cada campo</li>
+                        </ul>
+                    </li>
+                    <li><strong>Validaciones específicas:</strong>
+                        <ul>
+                            <li>Nombre: mínimo 2 caracteres</li>
+                            <li>Email: formato válido con regex</li>
+                            <li>Mensaje: mínimo 10 caracteres</li>
+                            <li>Todos los campos son obligatorios</li>
+                        </ul>
+                    </li>
+                    <li><strong>Contador de caracteres</strong> para textarea (límite 500)</li>
+                    <li><strong>Mensajes globales</strong> de éxito/error</li>
+                    <li><strong>Reset del formulario</strong> tras envío exitoso</li>
+                </ul>
+
+                <div class="codigo-ejemplo">
+                    <code>
+// Validación de email con regex<br>
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;<br>
+if (!emailRegex.test(value)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;errorMsg = 'Por favor, introduce un email válido';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;isValid = false;<br>
+}
+                    </code>
+                </div>
             </section>
+
+            <hr>
+
+            <section id="usabilidad">
+                <h2>7. Usabilidad y Accesibilidad</h2>
+
+                <h3>Medidas implementadas:</h3>
+
+                <h4>Claridad de interacciones:</h4>
+                <ul>
+                    <li>Iconos visuales (🔍 en galería, ↑ en botón)</li>
+                    <li>Cursor pointer en elementos clicables</li>
+                    <li>Hover effects que indican interactividad</li>
+                    <li>Tooltips informativos</li>
+                </ul>
+
+                <h4>Prevención de problemas:</h4>
+                <ul>
+                    <li>Validación del formulario previene envíos erróneos</li>
+                    <li>Navegación circular en galería (no hay "fin")</li>
+                    <li>ESC siempre cierra el modal</li>
+                    <li>Click fuera del modal lo cierra</li>
+                </ul>
+
+                <h4>Feedback constante:</h4>
+                <ul>
+                    <li>Mensajes claros de error/éxito</li>
+                    <li>Contador de caracteres en tiempo real</li>
+                    <li>Cambios visuales inmediatos (colores de borde)</li>
+                    <li>Animaciones suaves para todas las transiciones</li>
+                </ul>
+
+                <h4>Accesibilidad:</h4>
+                <ul>
+                    <li>Outline visible en elementos con focus</li>
+                    <li>Atributos title en elementos interactivos</li>
+                    <li>Textos descriptivos en botones</li>
+                    <li>Contraste adecuado en todos los elementos</li>
+                    <li>Tamaño de botones adecuado para touch (50x50px mínimo)</li>
+                </ul>
+
+                <h4>Sin animaciones excesivas:</h4>
+                <ul>
+                    <li>Todas las animaciones tienen propósito funcional</li>
+                    <li>Duraciones moderadas (200-600ms típicamente)</li>
+                    <li>No hay animaciones automáticas infinitas</li>
+                    <li>No hay efectos molestos o distractores</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="responsive">
+                <h2>8. Diseño Responsive</h2>
+
+                <p>Todas las funcionalidades interactivas están adaptadas para dispositivos móviles:</p>
+                <ul>
+                    <li><strong>Modal galería:</strong> Ajuste automático a pantalla pequeña</li>
+                    <li><strong>Botones:</strong> Tamaño táctil adecuado (mínimo 45x45px)</li>
+                    <li><strong>Navegación modal:</strong> Botones en columna en móvil</li>
+                    <li><strong>Formulario:</strong> Inputs full-width en pantallas pequeñas</li>
+                    <li><strong>Botón volver arriba:</strong> Tamaño reducido en móvil</li>
+                </ul>
+
+                <div class="codigo-ejemplo">
+                    <code>
+@media (max-width: 768px) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.modal-navigation {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.nav-btn {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}
+                    </code>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="estructura-archivos">
+                <h2>9. Estructura de Archivos</h2>
+
+                <h3>Organización del proyecto:</h3>
+                <pre style="background-color: #f4f4f4; padding: 1rem; border-radius: 0.5rem;">
+proyecto/
+├── index.html           (página principal con galería y habilidades)
+├── contacto.html        (formulario interactivo)
+├── formacion.html       (página de formación)
+├── css/
+│   ├── styles.css       (estilos originales)
+│   └── interactive-styles.css  (estilos para elementos interactivos)
+└── js/
+    └── script.js        (todo el código JavaScript/jQuery)
+                </pre>
+
+                <h3>Carga de recursos:</h3>
+                <ol>
+                    <li><strong>jQuery 3.7.1</strong> desde CDN oficial</li>
+                    <li><strong>styles.css</strong> - estilos base</li>
+                    <li><strong>interactive-styles.css</strong> - estilos interactivos</li>
+                    <li><strong>script.js</strong> - al final del body para optimización</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <section id="resumen-requisitos">
+                <h2>10. Cumplimiento de Requisitos</h2>
+
+                <table class="tabla-funcionalidades">
+                    <thead>
+                        <tr>
+                            <th>Requisito</th>
+                            <th>Mínimo</th>
+                            <th>Implementado</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Uso de jQuery</td>
+                            <td>Sí</td>
+                            <td>jQuery 3.7.1 desde CDN</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript externo</td>
+                            <td>Sí</td>
+                            <td>script.js separado</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>Código al cargar página</td>
+                            <td>Sí</td>
+                            <td>$(document).ready()</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>Interacción con contenido real</td>
+                            <td>Sí</td>
+                            <td>Galería, formulario, secciones, etc.</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>Gestión de eventos</td>
+                            <td>4</td>
+                            <td>18 eventos distintos</td>
+                            <td>✓ Supera (450%)</td>
+                        </tr>
+                        <tr>
+                            <td>Manipulación del DOM</td>
+                            <td>3</td>
+                            <td>6 tipos de manipulación</td>
+                            <td>✓ Supera (200%)</td>
+                        </tr>
+                        <tr>
+                            <td>Animaciones</td>
+                            <td>2</td>
+                            <td>8 animaciones distintas</td>
+                            <td>✓ Supera (400%)</td>
+                        </tr>
+                        <tr>
+                            <td>Componente principal</td>
+                            <td>1</td>
+                            <td>Galería modal completa</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>Usabilidad</td>
+                            <td>Sí</td>
+                            <td>Feedback claro, sin animaciones molestas</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>Accesibilidad</td>
+                            <td>Sí</td>
+                            <td>Focus, tooltips, contraste, tamaños táctiles</td>
+                            <td>✓ Completo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <section id="conclusion">
+                <h2>11. Conclusión</h2>
+
+                <p>Esta práctica ha transformado un CV estático en una <strong>aplicación web interactiva
+                        completa</strong>, implementando:</p>
+
+                <ul>
+                    <li>✓ <strong>18 eventos distintos</strong> (450% del requisito)</li>
+                    <li>✓ <strong>6 tipos de manipulación DOM</strong> (200% del requisito)</li>
+                    <li>✓ <strong>8 animaciones funcionales</strong> (400% del requisito)</li>
+                    <li>✓ <strong>1 componente principal completo</strong> (galería modal)</li>
+                    <li>✓ <strong>Validación de formulario en tiempo real</strong></li>
+                    <li>✓ <strong>Diseño responsive</strong> en todos los elementos</li>
+                    <li>✓ <strong>Usabilidad y accesibilidad</strong> cuidadas</li>
+                </ul>
+
+                <p>Todos los elementos interactivos están integrados de forma natural en el CV, mejorando genuinamente
+                    la experiencia del usuario sin añadir complejidad innecesaria.</p>
+
+                <p><strong>El proyecto está listo para presentación y cumple ampliamente todos los requisitos de la
+                        práctica.</strong></p>
+            </section>
+
         </main>
 
         <footer class="site-footer">
