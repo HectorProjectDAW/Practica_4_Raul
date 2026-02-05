@@ -10,59 +10,9 @@ Proyecto de CV personal con interactividad completa implementada mediante JavaSc
 
 ---
 
-## 🚀 Instalación y Configuración
+## Funcionalidades Implementadas
 
-### Estructura de carpetas requerida:
-
-```
-proyecto/
-├── index.html
-├── contacto.html
-├── formacion.html
-├── multimedia_memoria.html
-├── javascript_memoria.html
-├── css/
-│   ├── styles.css
-│   └── interactive-styles.css
-└── js/
-    └── script.js
-```
-
-### Pasos para instalar:
-
-1. **Crea la estructura de carpetas:**
-
-   ```bash
-   mkdir css js
-   ```
-
-2. **Coloca los archivos HTML en la raíz del proyecto:**
-   - index.html
-   - contacto.html
-   - formacion.html
-   - javascript_memoria.html
-
-3. **Coloca los archivos CSS en la carpeta `css/`:**
-   - styles.css (tu CSS original)
-   - interactive-styles.css (nuevo archivo con estilos interactivos)
-
-4. **Coloca el archivo JavaScript en la carpeta `js/`:**
-   - script.js (código JavaScript con jQuery)
-
-5. **Asegúrate de que existan las carpetas de recursos:**
-   - `images/` - con todas tus imágenes
-   - `audio/` - con el archivo de audio
-   - `video/` - con el archivo de video
-
-6. **Abre el proyecto en un navegador:**
-   - Abre `index.html` en tu navegador preferido
-   - jQuery se carga automáticamente desde CDN (requiere conexión a internet)
-
----
-
-## ✨ Funcionalidades Implementadas
-
-### 🖼️ Componente Principal: Galería Modal Interactiva
+### Componente Principal: Galería Modal Interactiva
 
 - Click en cualquier imagen para ver en tamaño completo
 - Navegación entre imágenes (Anterior/Siguiente)
@@ -70,7 +20,7 @@ proyecto/
 - Animaciones suaves de entrada/salida
 - Diseño responsive
 
-### 📋 Sistema de Validación de Formulario
+### Sistema de Validación de Formulario
 
 - Validación en tiempo real
 - Feedback visual inmediato (bordes verde/rojo)
@@ -79,7 +29,7 @@ proyecto/
 - Contador de caracteres (límite 500)
 - Mensaje de éxito tras envío
 
-### 🎯 Eventos Implementados (18 total):
+### Eventos Implementados (18 total):
 
 1. Click en imágenes de galería
 2. Click en cerrar modal
@@ -100,7 +50,7 @@ proyecto/
 17. Scroll para animación de secciones
 18. Mouseleave en diversos elementos
 
-### 🎨 Animaciones (8 tipos):
+### Animaciones (8 tipos):
 
 - fadeIn/fadeOut (modal, botones, tooltips)
 - slideToggle (acordeón de secciones)
@@ -108,7 +58,7 @@ proyecto/
 - CSS transforms (hover en imágenes y iconos)
 - Fade in desde abajo (secciones al hacer scroll)
 
-### 🛠️ Manipulación del DOM:
+### Manipulación del DOM:
 
 - Creación dinámica de elementos
 - Mostrar/ocultar con efectos
@@ -119,7 +69,7 @@ proyecto/
 
 ---
 
-## 📱 Características Responsive
+## Características Responsive
 
 Todas las funcionalidades están optimizadas para:
 
@@ -129,7 +79,7 @@ Todas las funcionalidades están optimizadas para:
 
 ---
 
-## ♿ Accesibilidad
+## Accesibilidad
 
 - Focus visible en elementos interactivos
 - Tooltips informativos
@@ -139,7 +89,7 @@ Todas las funcionalidades están optimizadas para:
 
 ---
 
-## 🧪 Pruebas Recomendadas
+## Pruebas a realizar para que te sea más sencillo corregir
 
 1. **Galería:**
    - Click en cada imagen
@@ -170,68 +120,42 @@ Todas las funcionalidades están optimizadas para:
 
 ## 📊 Cumplimiento de Requisitos
 
-| Requisito            | Requerido | Implementado  | Estado          |
-| -------------------- | --------- | ------------- | --------------- |
-| Eventos              | 4         | 18            | ✓ Supera (450%) |
-| Manipulación DOM     | 3         | 6 tipos       | ✓ Supera (200%) |
-| Animaciones          | 2         | 8             | ✓ Supera (400%) |
-| Componente principal | 1         | Galería modal | ✓ Completo      |
-| jQuery               | Sí        | v3.7.1        | ✓ Completo      |
-| JavaScript externo   | Sí        | script.js     | ✓ Completo      |
-| Usabilidad           | Sí        | Implementada  | ✓ Completo      |
-
----
-
-## 🔧 Dependencias
-
-- **jQuery 3.7.1** - Cargado desde CDN
-- **Conexión a internet** - Necesaria para cargar jQuery
+| Requisito            | Requerido | Implementado  |
+| -------------------- | --------- | ------------- |
+| Manipulación DOM     | 3         | 6 tipos       |
+| Animaciones          | 2         | 8             |
+| Componente principal | 1         | Galería modal |
+| jQuery               | Sí        | v3.7.1        |
+| JavaScript externo   | Sí        | script.js     |
+| Usabilidad           | Sí        | Implementada  |
 
 ---
 
 ## 📝 Notas Adicionales
 
-- El archivo `javascript_memoria.html` contiene la documentación completa de la práctica
-- Todos los eventos y funciones están comentados en el código
-- Los console.log() ayudan a debuggear si hay problemas
-- El código es compatible con todos los navegadores modernos
+- El archivo `javascript-memoria.html` contiene la documentación completa de la práctica
+- Todos los eventos y funciones del script.js están comentados
 
 ---
 
 ## 👨‍💻 Autor
 
 **Héctor Jarque García**  
-Práctica TEMA 4 - DAW  
+Práctica TEMA 4
 Febrero 2026
 
 ---
 
 ## 📄 Archivos Entregados
 
-1. ✓ index.html (con scripts añadidos)
-2. ✓ contacto.html (con validación interactiva)
-3. ✓ formacion.html (actualizado)
-4. ✓ javascript_memoria.html (documentación completa)
-5. ✓ js/script.js (todo el código JavaScript/jQuery)
-6. ✓ css/interactive-styles.css (estilos para elementos interactivos)
-7. ✓ README.md (este archivo)
+1. index.html (con scripts añadidos)
+2. contacto.html (con validación interactiva)
+3. formacion.html (actualizado)
+4. javascript-memoria.html (documentación completa)
+5. js/script.js (todo el código JavaScript/jQuery)
+6. css/interactive-styles.css (estilos para elementos interactivos)
+7. css/styles.css (los estilos de anteriores entregas)
+8. audio/musica.mp3 (el audio de la anterior entrega)
+9. README.md (este archivo)
 
-**Total: 7 archivos nuevos/modificados**
-
----
-
-## ✅ Checklist de Entrega
-
-- [x] jQuery correctamente importado
-- [x] Código JavaScript en archivo externo
-- [x] Mínimo 4 eventos (implementados 18)
-- [x] Mínimo 3 manipulaciones DOM (implementadas 6)
-- [x] Mínimo 2 animaciones (implementadas 8)
-- [x] 1 componente interactivo principal (galería modal)
-- [x] Interacción con contenido real de la web
-- [x] Usabilidad y accesibilidad implementadas
-- [x] Documentación completa (javascript_memoria.html)
-- [x] Código comentado y organizado
-- [x] Diseño responsive
-
-**Proyecto completo y listo para presentación ✓**
+**Total: 9 archivos nuevos/modificados**

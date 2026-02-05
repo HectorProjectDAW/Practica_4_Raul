@@ -1,8 +1,3 @@
-/* =====================================================
-   ESTILOS PARA ELEMENTOS INTERACTIVOS - JAVASCRIPT
-   ===================================================== */
-
-/* Modal de Galería */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -84,7 +79,6 @@
     transform: scale(0.98);
 }
 
-/* Indicador de galería interactiva */
 .galeria-item {
     cursor: pointer;
     position: relative;
@@ -112,7 +106,6 @@
     opacity: 1;
 }
 
-/* Iconos de toggle para acordeón */
 .toggle-icon {
     font-size: 0.8em;
     margin-left: 0.5rem;
@@ -121,7 +114,6 @@
     color: #4facfe;
 }
 
-/* Mensajes del formulario */
 .form-messages {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -145,7 +137,6 @@
     margin: 0;
 }
 
-/* Errores de campo individual */
 .field-error {
     display: block;
     color: #e74c3c;
@@ -154,7 +145,6 @@
     font-weight: 500;
 }
 
-/* Botón volver arriba */
 #back-to-top {
     display: none;
     position: fixed;
@@ -182,7 +172,6 @@
     transform: translateY(-2px) scale(1.05);
 }
 
-/* Tooltip de habilidades */
 .skill-tooltip {
     display: inline-block;
     background-color: #0077cc;
@@ -195,7 +184,6 @@
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
-/* Animación de entrada para secciones */
 .fade-in-section {
     opacity: 0;
     transform: translateY(30px);
@@ -207,7 +195,6 @@
     transform: translateY(0);
 }
 
-/* Mejoras visuales para elementos interactivos */
 #experiencia article {
     transition: all 0.3s ease;
 }
@@ -216,12 +203,10 @@
     transition: transform 0.3s ease;
 }
 
-/* Contador de caracteres */
 #char-counter {
     transition: color 0.3s ease;
 }
 
-/* Animación de barras de progreso */
 progress {
     transition: all 0.3s ease;
 }
@@ -230,7 +215,6 @@ progress:hover {
     box-shadow: 0 0 0.5rem rgba(79, 172, 254, 0.5);
 }
 
-/* Responsive para modal */
 @media (max-width: 768px) {
     .modal-close {
         font-size: 2rem;
@@ -259,7 +243,6 @@ progress:hover {
     }
 }
 
-/* Animación de carga */
 @keyframes pulse {
     0%, 100% {
         opacity: 1;
@@ -273,7 +256,6 @@ progress:hover {
     animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* Estados de focus mejorados */
 input:focus,
 textarea:focus,
 button:focus {
@@ -281,7 +263,6 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* Mejora de accesibilidad para elementos clicables */
 .galeria-item,
 .nav-btn,
 #back-to-top,
@@ -289,7 +270,6 @@ button:focus {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Transiciones suaves globales para elementos interactivos */
 * {
     transition-timing-function: ease-out;
 }

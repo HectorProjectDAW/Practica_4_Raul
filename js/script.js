@@ -1,16 +1,7 @@
-/**
- * Script de interactividad para CV - Héctor Jarque García
- * Práctica TEMA 4 - JavaScript y jQuery
- */
-
 $(document).ready(function () {
   console.log("jQuery cargado y página lista");
 
-  // ========================================
-  // 1. GALERÍA INTERACTIVA MODAL (Componente Principal)
-  // ========================================
-
-  // Crear el modal de galería dinámicamente
+  // Crear modal de galería
   const modalHTML = `
         <div id="gallery-modal" class="modal-overlay">
             <div class="modal-content">
@@ -61,7 +52,7 @@ $(document).ready(function () {
   function openModal(index) {
     updateModalImage(index);
     $("#gallery-modal").fadeIn(300);
-    $("body").css("overflow", "hidden"); // Prevenir scroll
+    $("body").css("overflow", "hidden");
   }
 
   // Función para cerrar el modal
@@ -87,10 +78,6 @@ $(document).ready(function () {
     }
   });
 
-  // ========================================
-  // 2. ACORDEÓN DE SECCIONES
-  // ========================================
-
   // Añadir botones de toggle a las secciones
   $("#experiencia h1, #habilidades h2").each(function () {
     $(this)
@@ -114,10 +101,6 @@ $(document).ready(function () {
       .find(".toggle-icon")
       .text(content.is(":visible") ? "▼" : "▶");
   });
-
-  // ========================================
-  // 3. ANIMACIÓN DE BARRAS DE PROGRESO
-  // ========================================
 
   // Inicializar barras en 0
   $("progress").each(function () {
@@ -146,12 +129,7 @@ $(document).ready(function () {
 
   $(window).on("scroll", animateProgressBars);
 
-  // ========================================
-  // 4. VALIDACIÓN Y FEEDBACK DEL FORMULARIO
-  // ========================================
-
   if ($("#contacto form").length > 0) {
-    // Crear contenedor para mensajes de error
     $('<div id="form-messages" class="form-messages"></div>').insertBefore(
       "#contacto form",
     );
@@ -164,7 +142,7 @@ $(document).ready(function () {
       });
     });
 
-    // EVENTO 9: Blur (perder foco) - validación individual
+    // EVENTO 9: Blur
     $("#contacto input, #contacto textarea").on("blur", function () {
       $(this).css({
         "border-color": "#dfe6e9",
@@ -192,7 +170,7 @@ $(document).ready(function () {
           "¡Mensaje enviado correctamente! Te contactaremos pronto.",
           "success",
         );
-        $(this)[0].reset(); // Limpiar formulario
+        $(this)[0].reset();
 
         // Simular envío
         setTimeout(function () {
@@ -214,8 +192,6 @@ $(document).ready(function () {
       const fieldName = $field.attr("name");
       let isValid = true;
       let errorMsg = "";
-
-      // Eliminar mensajes de error previos
       $field.next(".field-error").remove();
 
       if (value === "") {
@@ -236,12 +212,12 @@ $(document).ready(function () {
       }
 
       if (!isValid) {
-        $field.css("border-color", "#e74c3c");
+        $field.css("border-color", "#d53927");
         $('<span class="field-error">' + errorMsg + "</span>").insertAfter(
           $field,
         );
       } else {
-        $field.css("border-color", "#27ae60");
+        $field.css("border-color", "#14b858");
       }
 
       return isValid;
@@ -260,10 +236,6 @@ $(document).ready(function () {
     }
   }
 
-  // ========================================
-  // 5. SCROLL SUAVE EN ENLACES DE NAVEGACIÓN
-  // ========================================
-
   // EVENTO 11: Click en enlaces de navegación interna
   $('a[href^="#"]').on("click", function (e) {
     const target = $(this).attr("href");
@@ -279,10 +251,6 @@ $(document).ready(function () {
       );
     }
   });
-
-  // ========================================
-  // 6. EFECTOS HOVER MEJORADOS
-  // ========================================
 
   // EVENTO 12: Hover en tarjetas de experiencia
   $("#experiencia article")
@@ -310,10 +278,6 @@ $(document).ready(function () {
       $(this).css("transform", "scale(1) rotate(0deg)");
     });
 
-  // ========================================
-  // 7. BOTÓN "VOLVER ARRIBA"
-  // ========================================
-
   // Crear botón dinámicamente
   $("body").append('<button id="back-to-top" title="Volver arriba">↑</button>');
 
@@ -331,12 +295,7 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
   });
 
-  // ========================================
-  // 8. CONTADOR DE CARACTERES EN TEXTAREA
-  // ========================================
-
   if ($("#mensaje").length > 0) {
-    // Añadir contador
     const maxChars = 500;
     const counterHTML =
       '<div id="char-counter" style="text-align: right; font-size: 0.85rem; color: #777; margin-top: 0.25rem;">0 / ' +
@@ -360,10 +319,6 @@ $(document).ready(function () {
     });
   }
 
-  // ========================================
-  // 9. TOOLTIP INFORMATIVO EN HABILIDADES
-  // ========================================
-
   // EVENTO 17: Hover en barras de progreso para mostrar tooltip
   $("progress, meter").each(function () {
     const percentage = Math.round(($(this).val() / $(this).attr("max")) * 100);
@@ -386,10 +341,6 @@ $(document).ready(function () {
       });
   });
 
-  // ========================================
-  // 10. ANIMACIÓN DE ENTRADA PARA SECCIONES
-  // ========================================
-
   // Añadir clase inicial a secciones
   $("main section").addClass("fade-in-section");
 
@@ -406,15 +357,10 @@ $(document).ready(function () {
   }
 
   $(window).on("scroll", revealSections);
-  revealSections(); // Ejecutar al cargar
+  revealSections();
 
-  // ========================================
-  // MENSAJE DE BIENVENIDA
-  // ========================================
-  console.log("✓ Todos los elementos interactivos cargados correctamente");
-  console.log(
-    "✓ " + $(".galeria-item").length + " imágenes en galería interactiva",
-  );
-  console.log("✓ Formulario con validación en tiempo real");
-  console.log("✓ " + $("progress").length + " barras de progreso animadas");
+  console.log("Todos los elementos interactivos cargados correctamente");
+  console.log($(".galeria-item").length + " imágenes en galería interactiva");
+  console.log("Formulario cargado");
+  console.log($("progress").length + " barras de progreso animadas");
 });
