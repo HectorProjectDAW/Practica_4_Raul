@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Héctor Jarque García</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>Currículum</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#experiencia">Experiencia</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="formacion.html">Formación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="contacto" class="contact-page-container">
+        <h2>Contacto</h2>
+        <address>
+            +34 661 548 454<br>
+            <a href="mailto:practica@hectorjarque.com">practica@hectorjarque.com</a>
+        </address>
+
+        <form action="mailto:practica@hectorjarque.com">
+            <p>
+                <label for="nombre">Tu nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            </p>
+
+            <p>
+                <label for="email">Tu email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </p>
+
+            <p>
+                <label for="mensaje">Tu mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+            </p>
+
+            <p style="text-align: center;">
+                <button type="submit">Enviar mensaje</button>
+            </p>
+        </form>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Héctor Jarque García. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

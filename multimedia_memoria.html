@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria Multimedia - Héctor Jarque</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <h1>Memoria Práctica TEMA 3 - Elementos Multimedia</h1>
+            <p>Documentación de la práctica.</p>
+
+            <hr>
+
+            <section id="listado-media">
+                <h2>1. Listado de Elementos Multimedia</h2>
+
+                <h3>Imágenes usadas</h3>
+                <ul>
+                    <li><strong>Yo.jpg:</strong>
+                        <ul>
+                            <li>Formato: JPEG.</li>
+                            <li>Peso: 30,5 KB.</li>
+                            <li>Justificación: Es una fotografía de contenido. JPEG es ideal para imágenes
+                                fotográficas con degradados complejos, ofreciendo buena compresión.</li>
+                            <li>Tipo: Contenido (etiqueta <code>&lt;img&gt;</code>).</li>
+                        </ul>
+                    </li>
+                    <li><strong>uwutrack-preview.jpg, proxmox-vm.jpg, angular-app.jpg, nestjs-api.jpg:</strong>
+                        <ul>
+                            <li>Formato: JPEG o.</li>
+                            <li>Peso: 185,9 KB en total.</li>
+                            <li>Justificación: JPEG/WebP son
+                                adecuados para imágenes con muchos detalles. Idealmente, se usaría WebP para mejor
+                                compresión con calidad.</li>
+                            <li>Tipo: Contenido (etiqueta <code>&lt;figure&gt;</code>/<code>&lt;img&gt;</code> en
+                                galería).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Linkedin.png, Github.png:</strong>
+                        <ul>
+                            <li>Formato: PNG.</li>
+                            <li>Peso: 194 KB.</li>
+                            <li>Justificación: Logotipos o iconos con áreas de color plano y transparencias. PNG (o
+                                mejor SVG) es la opción correcta para preservar la nitidez.</li>
+                            <li>Tipo: Contenido (etiqueta <code>&lt;img&gt;</code>).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Audios usados</h3>
+                <ul>
+                    <li><strong>podcast-extracto.mp3</strong>:
+                        <ul>
+                            <li>Origen: pixabay.com.</li>
+                            <li>Licencia: Free Use.</li>
+                            <li>Formatos usados: MP3 (amplia compatibilidad, buen estándar) y OGG sería para cobertura
+                                total en navegadores no compatibles con MP3.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Vídeos usados</h3>
+                <ul>
+                    <li><strong>demo-proyecto.mp4</strong>:
+                        <ul>
+                            <li>Origen: pixabay.com</li>
+                            <li>Licencia: Free Use.</li>
+                            <li>Formatos usados: MP4 (cubre la mayoría de navegadores) y WebM ( sería la alternativa
+                                libre y
+                                eficiente para máxima compatibilidad).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="explicacion-efectos">
+                <h2>2. Explicación de Transiciones y Animaciones CSS</h2>
+
+                <h3>Transiciones y Animaciones Aplicadas</h3>
+                <ol>
+                    <li>Efecto Hover de Galería:
+                        <ul>
+                            <li>Dónde: Elemento <code>.galeria-item:hover</code>.</li>
+                            <li>Objetivo: Mostrar al usuario que la imagen es interactiva o un elemento de
+                                portafolio al que se le puede prestar atención.</li>
+                            <li>Implementación: Se usa
+                                <code>transition: transform 0.4s, filter 0.4s, box-shadow 0.4s</code> para una animación
+                                suave. Al hacer hover, se aplica <code>transform: scale(1.03)</code> (un zoom sutil) y
+                                <code>filter: grayscale(80%)</code> (el efecto visual solicitado).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>"Call to Action" del Botón de Contacto:
+                        <ul>
+                            <li>Dónde: Elemento <code>.contact-page-container button:hover</code>.</li>
+                            <li>Objetivo: Llamar la atención sobre la acción principal de la página (enviar el
+                                formulario) y dar una respuesta visual clara a la interacción del usuario.</li>
+                            <li>Implementación: Se usa
+                                <code>transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s</code>. Al
+                                hacer hover, se aplica <code>transform: translateY(-3px) scale(1.01)</code> (un ligero
+                                movimiento hacia arriba) y una sombra más profunda.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Problemas Encontrados y Soluciones</h3>
+                <ul>
+                    <li>Problema: Asegurar que los efectos de transición no fueran demasiado bruscos.
+                        <ul>
+                            <li>Solución: Se limita el valor del <code>transform: scale()</code> a 1.03 y el
+                                <code>filter: grayscale()</code> al 80%, y se usan valores de tiempo de transición de
+                                <code>0.2s</code> a <code>0.4s</code> con la función <code>ease-out</code> para que los
+                                efectos se sintieran suaves y sutiles.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Problema: Lograr la máxima compatibilidad de audio y video.
+                        <ul>
+                            <li>Solución: Uso de la etiqueta <code>&lt;source&gt;</code> múltiple dentro de
+                                <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> con los formatos MP3+OGG y
+                                MP4+WebM, respectivamente, lo que es la práctica recomendada para la cobertura de
+                                navegadores.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="derechos-autor">
+                <h2>3. Confirmación de Derechos de Autor</h2>
+                <p>Confirmo que todos los elementos multimedia (imágenes, audios y videos) utilizados son de creación
+                    propia o están bajo licencias que permiten su uso en un proyecto educativo/personal, sin vulnerar
+                    derechos de autor.</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p><a href="index.html">Volver al CV</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

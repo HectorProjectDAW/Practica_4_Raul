@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Héctor Jarque García</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>Currículum</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#perfil">Inicio</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="formacion.html">Formación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+
+            <div class="main-layout">
+                <section id="perfil">
+                    <figure>
+                        <img src="images/Yo.jpg" alt="Foto profesional de Héctor Jarque">
+                        <figcaption style="margin-top:8px; font-style:italic;">Foto profesional</figcaption>
+                    </figure>
+                    <h2>Héctor Jarque García</h2>
+                    <p>Segundo año de <strong>DAW</strong> (Desarrollo de Aplicaciones Web)</p>
+                    <aside>Buscando prácticas y oportunidades como desarrollador.</aside>
+                </section>
+
+                <section id="experiencia">
+                    <h1>Experiencia laboral</h1>
+
+                    <article>
+                        <h2>Prácticas de 1º de DAW</h2>
+                        <p style="font-size:0.9rem; color:#444;"><time datetime="2025-03">Marzo 2025</time> - <time
+                                datetime="2025-06">Junio 2025</time></p>
+                        <ul>
+                            <li>Desarrollo web con <strong>HTML</strong>, <strong>CSS</strong> y
+                                <strong>JavaScript</strong>
+                            </li>
+                            <li>Programación backend en <strong>Java</strong></li>
+                            <li>Uso básico de <strong>SQL</strong> y <strong>Python</strong></li>
+                        </ul>
+                    </article>
+
+                    <hr>
+
+                    <article>
+                        <h2>Federació de Triatló de la Comunitat Valenciana (FTCV)</h2>
+                        <p style="font-size:0.9rem; color:#444;"><time datetime="2024-12">Diciembre 2024</time> - <time
+                                datetime="2025-09">Actualidad</time></p>
+                        <ul>
+                            <li>Atención al público</li>
+                            <li>Logística y montaje</li>
+                            <li>Gestión de ventas</li>
+                        </ul>
+                    </article>
+                </section>
+            </div>
+            <hr>
+
+            <section id="habilidades">
+                <h2>Habilidades técnicas</h2>
+                <ul>
+                    <li>HTML5 y CSS3 <progress value="90" max="100" title="90%"></progress></li>
+                    <li>JavaScript <progress value="70" max="100" title="70%"></progress></li>
+                    <li>Angular <progress value="50" max="100" title="50%"></progress></li>
+                    <li>NestJS <progress value="50" max="100" title="50%"></progress></li>
+                    <li>SCSS <progress value="30" max="100" title="30%"></progress></li>
+                    <li>Python <progress value="60" max="100" title="60%"></progress></li>
+                    <li>Git y GitHub <progress value="80" max="100" title="80%"></progress></li>
+                    <li>Terminal de Linux <progress value="60" max="100" title="60%"></progress></li>
+                    <li>Manejo de servidores (Proxmox) <progress value="60" max="100" title="60%"></progress></li>
+                    <li>SQL básico <meter value="0.5" min="0" max="1" title="50%">50%</meter></li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="proyectos" class="proyecto-galeria">
+                <h2>Portafolio de Proyectos (Galería)</h2>
+                <div class="galeria-grid">
+                    <figure class="galeria-item">
+                        <img src="images/uwutrack-preview.jpg" alt="Captura de pantalla de la plataforma UwUTrack">
+                        <figcaption>UwUTrack: Plataforma de lectura de manga</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="images/proxmox-vm.jpg" alt="Panel de administración de Proxmox VE">
+                        <figcaption>Servidor personal con Proxmox (Administración de VMs)</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="images/angular-app.jpg" alt="Interfaz de una aplicación en Angular">
+                        <figcaption>Aplicación de gestión de tareas con Angular</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="images/nestjs-api.jpg" alt="Fragmento de código de una API con NestJS">
+                        <figcaption>Desarrollo de API backend con NestJS</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="multimedia-integracion">
+                <h2>Integración Multimedia</h2>
+
+                <article id="audio-podcast">
+                    <h3>Musica de fondo</h3>
+                    <p>Una breve muestra de un cancion</p>
+                    <audio controls preload="metadata"
+                        style="width: 100%; max-width: 600px; display: block; margin: auto;">
+                        <source src="audio/musica.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </article>
+
+                <hr style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+
+                <article id="video-demo">
+                    <h3>Demo Rápida de un Video</h3>
+                    <p>Pequeña demostración un video.</p>
+                    <video controls poster="images/video-poster.jpg"
+                        style="width: 100%; max-width: 640px; display: block; margin: auto;">
+                        <source src="video/video.mp4" type="video/mp4">
+                        <track kind="subtitles" src="video/subtitulos-es.vtt" srclang="es" label="Español">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </article>
+            </section>
+
+            <hr>
+
+            <section id="social">
+                <h2>Mis redes sociales</h2>
+                <p>
+                    <a href="https://es.linkedin.com/in/hector-jarque-developer">
+                        <img src="images/Linkedin.png" alt="Icono de LinkedIn"> LinkedIn
+                    </a>
+                    <span>|</span>
+                    <a href="https://github.com/HectorJarque">
+                        <img src="images/Github.png" alt="Icono de GitHub"> GitHub
+                    </a>
+                </p>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Héctor Jarque García. Todos los derechos reservados. | <a
+                    href="multimedia_memoria.html">Memoria Multimedia</a></p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
